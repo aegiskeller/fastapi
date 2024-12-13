@@ -19,5 +19,11 @@ jobs:
     - name: Lint with pylint
       run: |
         make lint
+    - name: build container
+      run: |
+        docker build -t di_fastapi .
+    - name: run container
+      run: |
+        docker run -p 126.0.0.1:8080:8080 di_fastapi
   
     
